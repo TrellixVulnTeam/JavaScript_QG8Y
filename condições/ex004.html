@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Nacionalidade!</h1>
+    <button onclick="iniciar()">Clique aqui para iniciar!</button>
+    <div id="res"></div>
+    <script>
+        
+        function iniciar(){
+            var deOnde = prompt('Qual é o seu país')
+            var resultado = document.querySelector('div#res')
+            resultado.innerHTML = `Seu pais é o ${deOnde}`
+            if(deOnde == 'brasil' || deOnde == 'BRASIL' || deOnde == 'Brasil'){
+                resultado.innerHTML = `<p>Você é <strong>brasileiro</strong>!</p>`
+            }
+            else{
+                resultado.innerHTML = `<P>Você é estrangeiro!</P>`
+            }
+        }
+        
+    </script>
+</body>
+</html>

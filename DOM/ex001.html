@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução ao DOM</title>
+    <style>
+        :root{
+            --cor0: #F0F0EB;
+            --cor1: #FFE849;
+            --cor2: #A9B1A1;
+            --cor3: #8B9386;
+            --cor4: #4D4D3D;
+        }
+        
+        body{
+            background-attachment: fixed;
+            background-image: linear-gradient(to bottom, var(--cor2), var(--cor3), var(--cor4));
+            color: white;
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com o DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clíque aqui</div>
+    <div name="bra">Tem certeza de que não vai clicar? </div>
+    <div class="sil">Clique ai cara!</div>
+    <script>
+        var p1 = null;
+        p1 = document.getElementsByTagName('p')[0] /*Aqui esta selecionando
+        a tag p. Mais especificamente o primeiro parágrafo */
+        p1.style.backgroundColor = 'var(--cor0)'
+        p1.style.color = 'var(--cor4)'
+        /*Como a variável p1 está selecionando o parágrafo 0, ele pode
+        ter seu estílo modifícado usando essas funções acima*/
+        document.write(p1.innerText)/*
+        Essa função 
+        document.write() é usada para imprimir algo na tela. Nesse
+        caso está imprimindo a variavel p1 da página 
+        */
+        var p2 = null;
+        p2 = document.getElementsByTagName('p')[1]
+        /*document.write(p2.innerText) Aqui mostra apenas o texto 
+        presente no paragrafo
+        document.write(p2.innerHTML) Já aqui mostra todo o HTML 
+        presente no texto que esta no parágrafo*/
+        document.write(p2.innerHTML)
+
+        var d = document.getElementById('msg') /*Aqui, estou selecionando
+        a div pelo id dela que é 'msg'*/
+        d.style.backgroundColor = 'var(--cor0)'
+        d.style.color = 'var(--cor4)'
+        d.innerText = 'Estou aguardando você clicar!'
+
+        var d1 = document.getElementsByName('bra')[0] /*Aqui, estou selecionando
+        a div pelo nome e por o número dela */
+        d1.innerText = 'Iai?'
+
+        var d2 = document.getElementsByClassName('sil')[0]/*Aqui, estou selecionando
+        a div pela class e pelo numero dela*/
+        d2.innerText = 'Não desista'
+    </script>
+</body>
+</html>

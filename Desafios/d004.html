@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 4</title>
+</head>
+<body>
+    <h1>Calcular troco</h1>
+    <button onclick="b1()">Comprar produto</button>
+    <script>
+        function b1(){
+            var nome = prompt('Qual é o nome do produto?')
+            var valor = Number.parseInt(prompt(`Qual o valor do ${nome}`))
+            var pix = Number.parseInt(prompt(`Quanto você deu para comprar o ${nome}`))
+            var troco = pix - valor
+            if(troco < 0){
+                alert(`Quantia insuficiênte para compra. Ainda faltam R$ ${troco}`)
+            }
+            else{
+                alert(`Você comprou ${nome} que custou R$ ${valor}.
+                Deu R$ ${pix} em dinheiro e vai receber R$ ${troco} de troco.
+                Volte sempre!`)
+            }
+        }
+    </script>
+</body>
+</html>

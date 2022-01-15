@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 5</title>
+</head>
+<body>
+    <h1>Conversão de medidas</h1>
+    <button onclick="b1()">Converter</button>
+    <div id="result"></div>
+    <script>
+        function b1(){
+            var medida = Number.parseFloat(prompt(`Digite uma medida em metros`))
+            var resul = document.getElementById('result')
+            resul.innerHTML = `<p>A distância de <strong>${medida.toFixed(2)} metros</strong>, corresponde a...</p>`
+            resul.innerHTML += `<p>${medida / 1000} quilômetros (km)</p>`
+            resul.innerHTML += `<p>${medida / 100} hectômetros (hm)</p>`
+            resul.innerHTML += `<p>${medida / 10} decâmetros (Dam)</p>`
+            resul.innerHTML += `<p>${medida * 10} decimetros (dm)</p>`
+            resul.innerHTML += `<p>${medida * 100} centimetros (cm)</p>`
+            resul.innerHTML += `<p>${medida * 1000} milimetros (mm)</p>`
+        }
+    </script>
+</body>
+</html>
