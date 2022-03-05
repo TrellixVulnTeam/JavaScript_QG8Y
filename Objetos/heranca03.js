@@ -17,5 +17,5 @@ console.log(Object.keys(filha2))
 for(let key in filha2){
     filha2.hasOwnProperty(key) ?
         console.log(key) : console.log(`Por herança: ${key}`)
-    /*hasOwnProperty uer dizer que ela tem aquela propriedade que pertence a ela. E aí você vai passar o nome da chave, se pertence eu vou simplesmente botar o nome da propriedade. Se não, vou colocar `por herança: e o nome da propriedade`.*/    
+    /*hasOwnProperty quer dizer que ela tem aquela propriedade que pertence a ela. E aí você vai passar o nome da chave, se pertence eu vou simplesmente botar o nome da propriedade. Se não, vou colocar `por herança: e o nome da propriedade`.*/    
 }
