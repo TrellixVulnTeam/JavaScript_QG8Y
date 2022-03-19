@@ -1,6 +1,6 @@
 const sequence = {
     _id: 1,
-    get id(){return this_id++}
+    get id(){return this._id++}
 }
 const produtos ={}
 function salvarProdutos(produto){
@@ -14,5 +14,9 @@ function getProduto(id){
 function getProdutos(){
     return Object.values(produtos)
 }
-
-module.exports = {salvarProdutos, getProduto, getProdutos}
+function excluirProduto(id){
+    const produto = produtos[id]
+    delete produtos[id]
+    return produto
+}
+module.exports = {salvarProdutos, getProduto, getProdutos, excluirProduto}
