@@ -4,7 +4,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const bancoDeDados = require('./bancoDeDados')
 
-app.use(bodyParser.urlencoded({ extended: true}))
+app.use(bodyParser.urlencoded({ extended: true})) 
 app.get('/produtos', (req, res, next) => {
     res.send(bancoDeDados.getProdutos()) //Converter para JSON
 })
