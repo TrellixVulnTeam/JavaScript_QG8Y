@@ -9,6 +9,11 @@
         #conteudo{
             padding: 30px 0px;
         }
+        ul {
+            list-style-type: '\2714\00a0';
+            list-style-position: inside;
+            columns: 2;        
+        }
     </style>
 </head>
 <body>
@@ -21,6 +26,8 @@
                 <li><a href="exercicios/texto2.html">Texto 2</a></li>
                 <li><a href="exercicios/listas.html">Listas</a></li>
                 <li><a href="exercicios/listasAninhadas.html">Listas Aninhadas</a></li>
+                <li><a href="exercicios/links.html">Links</a></li>
+                <li><a href="exercicios/tabelas.html">Tabelas</a></li>
             </ul>
         </nav>
     </header>
@@ -36,6 +43,7 @@
                 fetch(link.href)
                     .then(resp => resp.text())
                     .then(html => conteudo.innerHTML = html)
+                    
             }
         })
     </script>
