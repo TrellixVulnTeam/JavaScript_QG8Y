@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transiçao de Imagens</title>
+</head>
+<style>
+    body{
+        display: flex;
+        flex-direction: center;
+        justify-content: center;
+        align-items: center;
+    }
+    #slider{
+        
+        width: 80%;
+        max-width: 550px;
+        height: 55vw;
+        max-height: 350px;
+        position: relative;
+    }
+    #slider > img{
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 800ms;
+    }
+    #slider > img.select{
+        opacity: 1; 
+    }
+</style>
+<body>
+    
+    <div id="slider">
+        <img class="select" src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="imagem"  title="Muro da Cidade por Tarso Bessa">
+        
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="Intro Cod3r">
+
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="imagem" >
+
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar"  >
+
+        <img src="http://files.cod3r.com.br/curso-web/logo-larga.png" alt="logo-larga">
+        
+        <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="loo">
+        
+    </div>
+    <script>
+        let time = 5000,
+            currentImageIndex = 0,
+            imagens = document.querySelectorAll("#slider img")
+            max = imagens.length;
+
+        function nextImage(){
+            imagens[currentImageIndex].classList.remove("select")
+            currentImageIndex++
+            if(currentImageIndex >= max){
+                currentImageIndex = 0
+            }
+            imagens[currentImageIndex].classList.add("select")
+        }
+        function start(){
+            setInterval(() =>{
+                nextImage()
+            }, time)
+        }
+        window.addEventListener("load", start())
+    </script>
+</body>
+
+</html>
