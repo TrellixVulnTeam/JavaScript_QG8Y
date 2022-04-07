@@ -6,8 +6,8 @@
     <div></div>
 </div>
 <div>
-    <button wm-play="meuVideo" onclick="tocar()">Play</button>
-    <button wm-pause="meuVideo" onclick="parar()">Pause</button>
+    <button wm-play="meuVideo" >Play</button>
+    <button wm-pause="meuVideo" >Pause</button>
 </div>
 <style>
     .progresso{
@@ -26,17 +26,16 @@
     }
 </style>
 <script>
-    const video = document.getElementById("meuVideo")
-    function tocar(){
-        video.play()
-        progresso(1)
+    function configurarVideo(id){
+        const video = document.getElementById(id)
+        document.querySelector(`[wm-play=${id}`).onclick = e =>video.play()
+        document.querySelector(`[wm-pause=${id}`).onclick = e =>video.pause()
+        setInterval(() =>{
+            const percentual = (video.currentTime / video.duration) * 100
+            const valorDiv = document.querySelector(`[wm-progresso=${id}]> div`)
+            valorDiv.style.width = `${percentual}%`
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        },500)
     }
-    function parar(){
-        video.pause(0)
-    }
-    function progresso(numero){
-        const progredir = document.get
-
-        
-    }
+    configurarVideo('meuVideo')
 </script>
