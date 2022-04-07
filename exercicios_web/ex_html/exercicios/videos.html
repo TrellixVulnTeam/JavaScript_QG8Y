@@ -1,0 +1,42 @@
+<video id="meuVideo" width="600px" height="450px" controls autoplay controlsList = 'nodownload'>
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu browser não suporta
+</video>
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+<div>
+    <button wm-play="meuVideo" onclick="tocar()">Play</button>
+    <button wm-pause="meuVideo" onclick="parar()">Pause</button>
+</div>
+<style>
+    .progresso{
+        height: 15px;
+        width: 600px;
+        border: solid 1px black;
+        margin: 10px 0px;
+    }
+    .progresso > div{
+        background-color: red;
+        color: white;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 30%;
+    }
+</style>
+<script>
+    const video = document.getElementById("meuVideo")
+    function tocar(){
+        video.play()
+        progresso(1)
+    }
+    function parar(){
+        video.pause(0)
+    }
+    function progresso(numero){
+        const progredir = document.get
+
+        
+    }
+</script>
