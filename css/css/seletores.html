@@ -6,7 +6,25 @@
     <title>CSS Selectors</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        /*Tipos de seletores:
+            .tag: class;
+            #aprovados: id;
+            #aninhado > div: filho direto;
+            #aninhado section: Descendente de #aninhado;
+            p + ul: irmãos adjacentes, pega apenas o ul;
+            p ~ ol: irmaos de mesmo pai, pega o ol
+            [feira]: atributo;
+            [feira = casa]: valor do atributo;
+            [feira~=escritorio]: vai pegar possiveis elementos dentro do atributo feira;
+            [feira*= sa]: vai pegar todos os elementos que tiverem sa no nome; 
+            span:nth-child(1): vai pegar o primeiro filho de alguem que esteja dentro de span;
+            section > :nth-child(odd) filhos impares;
+            section > :nth-child(even) filhos pares;
+        */
+        [feira] {
+            color: #ff0;
+            background-color: rgba(0, 0, 0, 0.329);
+        }
     </style>
 </head>
 

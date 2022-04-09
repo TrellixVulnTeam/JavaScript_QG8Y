@@ -6,11 +6,38 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /*
+            Em linhas gerais..
+            1. regra com !important
+            2. seletores mais especificos
+            3.. última regra processada(empate)
+        */
+        p{
+            background-color: gray;
+            color: white;
+            /*Aqui vai para a tag p em geral*/
+        }
+        .observacao{
+            background-color: rgba(0, 0, 0, 0.432);
+            color: white;
+            border: dashed 5px black;
+            padding: 20px!important; /*isso é uma exceção*/
+            font-size: 40px;
+            /*Aqui a vai ter mais moral que a anterior se qualquer tag p ou qualquer outra tiver uma class observacao*/
+        }
+        p.observacao{
+            padding: 2px;
+            background-image: linear-gradient(to right, red, yellow);
+            border: solid 5px black;
+            /*Ja essa aqui é unica e exclusiva para a class observacao na tag p. Ou seja, ela tem mais moral que as outras anteriores*/
+        }
     </style>
 </head>
 
 <body>
     <p class='observacao'>Olha essa observação!!!!</p>
+    <p>Saiba mais sobre <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity" target="_blank">Especificidade</a></p>
+    <div class="observacao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nihil rerum quos, nam ad aliquid accusantium accusamus, reiciendis unde minima exercitationem repellendus, dolorum quae praesentium sapiente esse! Odit, culpa delectus.</div>
 </body>
 
 </html>
