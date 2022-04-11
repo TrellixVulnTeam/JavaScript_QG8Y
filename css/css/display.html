@@ -5,7 +5,35 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        body{
+            font-size: 40px;
+            color: white;
+            background-color: rgb(4, 151, 102);
+        }
+        ul{
+            padding: 0;
+        }
+        
+        div, span, li{
+            background-color: #0000003f;
+            width: 50%;
+            width: 200px;
+            height: 80px;
+            /*Até agora o span não acatou as medidas de largura e altura*/
+            padding-top: 30px;
+            text-align: center;
+            display: block; /*agora o span aceitou as medidas, pois o display block faz os elementos terem sua propria linha*/
+
+            display: inline; /*agora todos os elementos vao para a mesma linha e deixam de aceitar as medidas de largura*/
+
+            display: inline-block; /*agora o display inline-block faz todos os elementos ficarem na mesma linha e também aceitarem as configurações de medidas*/
+            
+
+            /*Claro que apenas o ultimo display a ser declarado é o que vai prevalecer*/
+        }
+        div:hover, span:hover, li:hover{
+            background-color: #008000c7
+        }
     </style>
 </head>
 
