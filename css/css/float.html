@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Float</title>
+        <style>
+            body {
+                background-color: #222;
+            }
+            
+            .c1 {
+                background-color: red;
+                float: right;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <title>Float</title>
-    <style>
-        body {
-            background-color: #222;
-        }
+            .c2 {
+                background-color: green;
+                clear: right; /*Sem essa função, o c2 ainda fica na mesma linha do c1 que flutuou para right. Portanto, é legal usar ela para separar as linhas */
+                float: left;
+            }
+            
+            .c3 {
+                background-color: blue;
+                clear: both; /*limpa a flutuação de direita e esquerda*/
+                float: right;
+            }
 
-        .c1 {
-            background-color: red;
-        }
-
-        .c2 {
-            background-color: green;
-        }
-        
-        .c3 {
-            background-color: blue;
-        }
-
-        .c4 {
-            background-color: orange;
-        }
+            .c4 {
+                background-color: orange;
+                clear: both;
+                float: left;
+            }
+            div{
+                height: 150px;
+                width: 150px;
+            }
     </style>
 </head>
 

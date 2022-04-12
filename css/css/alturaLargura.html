@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
@@ -8,6 +8,7 @@
         body {
             font-size: 40px;
             background-color: coral;
+            margin: 0;
         }
 
         div {
@@ -17,12 +18,18 @@
         span {
             background-color: dodgerblue;
         }
+        span, div{
+            width: 50%;
+            height: 50%; /*Não vai funcionar porque essa medida é 50% do body, e ele é a soma da altura da div com o span*/
+            height: 250px;
+            display: inline-block;
+        }
     </style>
 </head>
 
 <body>
-    <div>Título</div>
-    <span>Subtítulo</span>
+    <!--O efeito de deixar a div e o span uma ao lado da outra sem espaço, se da porque no style ta a largura de 50% e o display: inline-block. Porem, aqui no HTML tem um detalhe que é a ausencia de espaço entre as duas, se tiver o espaço, nao tem como o efeito acontecer-->
+    <div>Título</div><span>Subtítulo</span>
 </body>
 
 </html>
