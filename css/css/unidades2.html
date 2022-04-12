@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <title>Unidades #02</title>
     <style>
-        /* ... */
+        .fora{
+            position: relative;
+            background-color: #ff6600;
+            width:400px ;
+            height:400px ;
+            padding: 50px;
+        }
+        .dentro{
+            background-color: blue;
+            height: 100%;
+            width: 100%;
+            position: static; /*vai ocupar apenas o espaço do conteúdo*/
+            /*position: relative; vai ocupar apenas o espaço do conteúdo*/
+
+            /*position: absolute; Não vai respeitar o espaço do conteúdo pois a div de fora é relativa e essa esta sendo absoluta.*/
+
+            /*position: fixed; Esse vai se basear pelo tamanho da tela*/
+        }
     </style>
 </head>
 <body>

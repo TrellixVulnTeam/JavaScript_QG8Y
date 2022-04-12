@@ -10,11 +10,58 @@
         * {
             margin: 0;
         }
-
+        html{
+            font-size: 28px;
+        }
         body {
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+        div{
+            font-size: 50px;
+        }
+        p{
+            /*Valores padrões:*/
+            font-size: 1em;
+            font-size: 100%;
+            font-size: 16px;
+            font-size: 12pt;
+
+            /*Unidades absolutas:*/
+            font-size:100px;/*tamanho do pixel é relativo*/
+            font-size:72pt;/*pontos*/
+            font-size:1in;/*polegada*/
+
+            /*Unidades relativas*/
+            font-size: 2.2em; /*vai se basear pela unidade de medida mais proximo, nesse caso vai ser o da div pois esta definida, mas se n tivesse, era a da própria pagina. ou seja, 16px e iria multiplicar por 2.2*/
+            font-size: 2.2rem;/*esse ja se baseia pelo tamanho da fonte do html*/
+            font-size: 50vh;/*altura da vew-port*/
+            font-size: 10vw;/*largura da vew-port*/
+
+            font-family: cursive;
+            font-weight: 100;
+            font-style: italic;
+            text-transform: uppercase; /*letras maiusculas, minusculas e etc*/
+            word-spacing: 10px; /*espaço entre as palavras*/
+            letter-spacing: 20px; /*espaço entre as letras*/
+            line-height: 2.5em;/*altura entre as linhas*/
+            text-align: justify;
+            text-overflow: ellipsis;
+        }
+        .botao{
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .destaque{
+            color: white;
+            background-color: brown;
+            box-shadow: 2px 2px 1px 1px black;
+        }
+        .destaque:active{
+            box-shadow: none;
         }
     </style>
 </head>
@@ -22,7 +69,7 @@
 <body>
     <div>
         <p>
-            Que texto
+            Que texto 
             <br>legal!!!
         </p>
     </div>
