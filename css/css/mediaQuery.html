@@ -12,6 +12,19 @@
             border: solid 5px;
             display: none;
         }
+        /*esse @media serve como um filtro de confiçoes para aplicar certas funcionalidades aquilo que se encaixa no filtro*/
+        @media(max-width: 600px){
+            .muito-pequeno{display: block;}
+            /*Os display das div estao como none. Mas, com essa função, quando diminuir a largura da tela ate 600px, a div com a class "muito-pequeno" terá display dela ira ser block e assim ela ira aparecer*/
+        }
+        @media (max-width: 1000px),(orientation: portrait) {
+            .pequeno-retrato{display: block;}
+            /*Quando a tela tiver no maximo 1000px ou a orientaçao da div tiver retrato, o display da class pequeno-retrato, será block*/
+        }
+        @media(min-width: 500px) and (max-width:1000px){
+            .intervalo{display: block;}
+            /*Quando a largura da tela estiver entre 500px e 1000px, a div com a class intervalo, tera o display block*/
+        }
     </style>
 </head>
 <body>

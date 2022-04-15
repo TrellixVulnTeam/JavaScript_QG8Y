@@ -7,7 +7,76 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            background-color: rgba(0, 0, 0, 0.747);
+            color: white;
+            width: 100%;
+            max-height: 150px;
+            position: relative;
+            font-size: 25px;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+            
+        }
+        li{
+            display: inline-block;
+            margin: 0px 10px;
+        }
+        li:hover{
+            background-color: rgba(0, 0, 0, 0.767);
+            padding: 15px;
+            
+        }
+        .logo{
+            display: inline-block;
+            
+        }
+        .logo img{
+            width: 400px;
+            height: 100px;
+            margin: 10px;
+        }
+        .menu-toggle{
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 40%;
+        }
+        nav{
+            display: inline-block;
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            
+        }
+        aside{
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+        }
+        .destaque{
+            background-color: red;
+            border-radius: 25px;
+            padding: 10px;
+        }
+        @media (max-width:1075px){
+            nav{left: 43%;}
+        }
+        @media (max-width:950px){
+            aside{display: none;}
+            .logo img{width: 300px;}
+        }
+        @media (max-width:705px){
+            nav{display: none;}
+            .menu-toggle{display: inline-block; left: 50%;}
+        }
     </style>
 </head>
 
@@ -44,7 +113,15 @@
     </header>
 
     <script>
-        // ...
+        document.querySelectorAll('.menu-toggle').forEach(folder => {
+        folder.onclick = function(e){
+            const pegarProxPasso = folder.nextElementSibling
+            const visibilidade = pegarProxPasso.style.display
+            
+            pegarProxPasso.style.display = visibilidade === 'none' ? 'block' : 'none'
+                       
+        }
+    })
     </script>
 </body>
 

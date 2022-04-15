@@ -5,7 +5,55 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div{
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px black;
+        }
+        .static{
+            top: 100px;
+            left: 100px;
+            background-color: blue;
+        }
+        .fixed{
+            position: fixed; /*Ele fica fixo na posição que foi descrita abaixo*/
+            bottom: 30px;
+            right: 0px;
+            background-color: orangered;
+        }
+        .relative1{
+            position: relative; /*Ele se baseia pelo elemento anterior*/
+            left: 50px;
+            top: 5px;
+            background-color: red;
+        }
+        .absolute1{
+            position: absolute; /*Ele simplemente nao se importa com o elemento anterior, apenas se posiciona na pagina como um todo e passa por cima do que tiver na posiçao declarada*/
+            left: 350px;
+            top: 120px;
+            background-color: peru;
+        }
+        .relative2{
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            background-color: yellow;
+            width: 200px;
+            height: 200px;
+        }
+        .absolute2{
+            position: absolute; /*Ele vai se posicionar apenas dentro da div relative*/
+            top: 40px;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: greenyellow;
+        }
+        .sticky{
+            position: sticky;
+            background-color: gray;
+            top: 10px; /*quando ele chegar a 10px do top, ele vai fixar na rolagem*/
+        }
     </style>
 </head>
 
