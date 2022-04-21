@@ -6,7 +6,19 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container{
+            display: flex;
+
+        }
+        .flex-container div{
+            flex-basis: 100px; /*essa propriedade vai dizer a medida do elemento (seja largura ou altura, isso vai depender se a direção do container for coluna ou nao) dentro do container. nesse caso, o sentido do container é linha, entao a largura da div vai ser de 100px*/
+
+            width: 200px; /*se o flex-basis tiver sentido row(linha) ele vai ser mais forte do que essa width*/
+        }
+        .flex-container div:nth-child(4){
+            /*grow shrink basis*/
+            flex: 3 6 100px;
+        }
     </style>
 </head>
 

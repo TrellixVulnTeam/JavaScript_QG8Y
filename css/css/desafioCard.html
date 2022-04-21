@@ -7,46 +7,47 @@
     <style>
         .curso{
             display: inline-block;
+            vertical-align: top;
             background-color: white;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.507);
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.507);
             width: 260px;
             height: 300px;
             margin: 20px;
             position: relative;
             padding: 5px;
-            border: .5px solid;
+            border: 1px solid white;
+            font-family: Verdana, sans-serif;
         }
         .curso img{
-            width: 97%;
-            height: 150px;
-            position: absolute;
-            left: 1.5%;
-            top: 1.5%;
+            width: 100%;
+            max-height: 50%;
+            
            
         }
         .curso-info{
-            position: absolute;
-            top: 135px;
-            left: 5%;
+            padding: 10px;
+            height: 90px;
+            overflow: hidden;
         }
         .curso-preco{
-            position: absolute;
-            top: 260px;
-            right: 5%;
+            float: right;
+            padding: 10px;
         }
         h4{
-            font-size: 25px;
+            font-size: 1.4em;
+            font-weight: 100;
+            margin: 0px;
         }
         p{
-            font-size:18px;
+            font-size:16px;
         }
         .preco-de{
             color: brown;
         }
         .preco-por{
             color: green;
-            font-size: 25px;
-            font-weight: bolder;
+            font-size: 1.4em;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -63,7 +64,7 @@
             <img src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
             <div class="curso-info">
                 <h4>Docker: Ferramenta essencial para Desenvolvedores</h4>
-                <p>Prof. Fulano</p>
+                <p style="display: none;">Prof. Fulano</p>
             </div>
             <div class="curso-preco">
                 <span class="preco-de"><s>R$80,00</s></span>

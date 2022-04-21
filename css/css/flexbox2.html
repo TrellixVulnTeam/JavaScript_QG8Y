@@ -6,7 +6,43 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container{
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+        .flex-container div:nth-child(3){
+            background-color: aquamarine;
+            order: 1; /*todos os itens por padrao tem ordem 0. nesse caso, ele tera uma ordem maior e vai pro final dos itens*/
+            order: -1; /*ele passa a ter uma ordem menor e vai pro inicio dos itens*/
+            align-self: stretch; /*padrao*/
+            align-self: center; /*vai centralizar e diminuir a altura*/
+            align-self: flex-end; /*vai pro final*/
+            align-self: flex-start;/*vai pro inicio*/
+            align-self: stretch;
+            
+        }
+        .flex-container div{
+            width: 100px;
+            /*
+                flex-grow
+                basicamente o seguinte: o flex-grow vai pegar o tamanho do conteiner e dividir pelo numero de itens e vai fazer eles preencherem o container. Se no flex-grow tiver peso 0, nenhum item vai crescer de tamanho, mas se tiver peso 1, todos vao crescer por igual. Porem, se eu colocar peso 1 em todos e peso 2 em um unico item, esse peso 2 vai ter mais espaço.
+            */
+            flex-grow: 0;
+            flex-grow: 1;
+        }
+        .flex-container div:nth-child(1){
+            background-color: yellowgreen;
+            flex-grow: 2;
+        }
+        .flex-container{
+            width: 300px;
+            flex-shrink: 1; /*vai encolher os itens por igual*/
+        }
+        .flex-container div:nth-child(2){
+            background-color: teal;
+            flex-shrink: 2; /*vai encolher mais q os outros*/
+        }
     </style>
 </head>
 

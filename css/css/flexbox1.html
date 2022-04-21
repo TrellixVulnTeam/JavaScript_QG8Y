@@ -6,7 +6,66 @@
     <title>Flexbox #01</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        div{
+            border: solid 5px red;
+            font-size:40px ;
+            margin: 5px;
+        }
+        .big{
+            font-size: 1.5em;
+        }
+        .flex-container{
+            display: flex; /*Por padrao ele deixa os itens direcionados na mesma linha*/
+
+            flex-direction: column;/*direciona os itens em coluna*/
+
+            flex-direction: column-reverse;/*direciona os itens em coluna e inverte a ordem deles*/
+
+            flex-direction: row-reverse;/*direciona os itens na mesma linha do lado direito da tela e inverte  a ordem deles*/
+
+            flex-direction: row; /*Deixa na forma padrão*/
+            width: 50%;
+            flex-wrap: wrap; /*Ja que no item anterior, a largura da caixa diminuiu deixando os itens do lado de fora, essa funçao faz quebrar a linha quando o item ultrapassar a caixa ai ele vai pra linha debaixo*/
+
+            flex-wrap: wrap-reverse; /*inverte as linhas colocando a de cima pra baixo*/
+
+            flex-flow: row wrap; /*Juntando as duas funções,ele deixa na forma padrao mas quebra a linha*/
+
+            height: 200px;
+            flex-flow: column-reverse wrap; /*como a altura foi definida, essa funçao inverte as colunas e quebra em varias colunas*/
+            flex-flow: row wrap;
+
+            justify-content: flex-start;
+            justify-content: end; /*vai justificar ele na direita da caixa*/
+
+            justify-content: center; /*vai centralizar */
+
+            justify-content: space-around; /*vai colocar o mesmo espaço em volta dos itens para ficarem distribuidos da mesma forma na caixa*/
+
+            justify-content: space-between; /*vai colocar apenas um espaço nos itens*/
+
+            /*Cross Axis*/
+            height: 400px;
+            align-items: stretch; /*padrao, o item vai esticar para ocupar a caixa toda*/
+
+            align-items: baseline; /*vai deixar os itens em tamanho normal, alinhando eles pela linha de baixo de cada um*/
+
+            align-items: flex-start; /*vai alinhar na linha de cima dos itens*/
+
+            align-items: end; /*vai alinhar os itens pelo seu final*/
+
+            align-items: center; /*vai centralizar os itens na caixa*/
+
+            /*Mais de uma linha*/
+            align-content: flex-start; /*todas as linhas vao pro inicio*/
+
+            align-content: flex-end; /*todas as linhas serao alinhadas no final da caixa*/
+
+            align-content: center; /*vai centralizar*/
+
+            align-content: space-around; /*vai dar o mesmo espaçamento em todos os lados dos itens*/
+            align-content: space-between;
+        }
     </style>
 </head>
 
