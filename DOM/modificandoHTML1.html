@@ -9,7 +9,30 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        const body = document.querySelector('body')
+        const div1 = document.createElement('div')
+        div1.classList.add('destaque')
+        div1.innerHTML = 'Primeiro'
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('wm-atributo', 'valor')
+        div2.innerHTML = 'Segundo'
+
+        const p = document.createElement('p')
+        p.innerHTML = 'Terceiro'
+        const div3 = document.createElement('div')
+        div3.appendChild(p) //vai adicionar o elemento P como o ultimo elemento da div3
+
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        const texto = document.createTextNode('Antex...')//criando um elemento texto
+        div3.insertBefore(texto, div3.childNodes[0]) //adicionando o elemento acima antes do elemento na posição 0 presente na div3
+
+        const div4 = div3.cloneNode(true) //a div4 sera o clone da div3. Esse parametro true quer dizer que pode copiar ate os filhos da div3, se fosse false, nao era permitido.
+        body.appendChild(div4)
+        body.removeChild(div3)
     </script>
 </body>
 
