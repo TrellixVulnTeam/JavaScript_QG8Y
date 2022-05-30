@@ -16,6 +16,7 @@ const storage = multer.diskStorage({
     filename: function(req,file, callback){
         callback(null, `${Date.now()}_${file.originalname}`)
     }
+    //isso tudo vai criar uma pasta para o upload de arquivos e vai modificar o nome de cada um com a data atual + o nome dele
 })
 const upload = multer({storage}).single('arquivo')
 app.post('./upload', (req, res) =>{
