@@ -11,6 +11,41 @@
     <h1>Estados</h1>
 
     <script>
-        // ...
+        function ajax(config){
+            const xhr = new XMLHttpRequest()
+            xhr.open(config.metodo, config.url, true)
+            xhr.onreadystatechange = e =>{
+                //eu quero pegar esse evento quando a requisição estiver concluida
+                if(xhr.readyState === 4){
+                    //o 4 significa que esta concluido
+                    if(xhr.status === 200){
+                        config.sucesso(xhr.responseXML)//o fato de passar responseXML, é que ele ja entrega um objeto todo resolvido
+                    }else if(xhr.status === 400){
+                        config.erro({
+                            codigo: xhr.status,
+                            texto: xhr.statusText
+                        })
+                    }
+                }
+            }
+            xhr.send()
+        }
+        ajax({
+            url: "dados/estados.xml",
+            metodo: "get",
+            sucesso(resposta){
+                const estados = resposta.getElementsByTagName('estado') //estados é uma lista de elementos com a tag estado
+                const itens = Array.from(estados).reduce(
+                    //estou transformando a lista de estados em um array
+                    (html, estado) => html + `<li>${estado.attributes.nome.value}</li>`, ''
+                        //com a funçao reduce vai transformar o array em uma string que estou pegando o valor de cada atributo nome na tag estado, colocando dentro de um li e concatenando ao acumulador html
+                )
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`) //antes de terminar o body, coloco a ul com os li dentro
+            },
+            erro(e){
+                const msg = document.createTextNode(`${e.codigo}: ${e.texto}`)
+                document.body.appendChild(msg)
+            }
+        })
     </script>
 </body>
