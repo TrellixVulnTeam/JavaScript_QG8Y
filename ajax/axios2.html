@@ -14,6 +14,20 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        function exibirResultado(id, dados){
+            const texto = JSON.stringify(dados)//vai transformar os dados em json e coloca-los na constante texto
+            document.getElementById(id).innerHTML = texto //vai pegar o os dados da const texto e adicionar na div com o id selecionado 
+        }
+        axios.get('parOuImpar',{
+            params:{
+                numero: 8
+            }
+        }).then(resp => exibirResultado('get', resp.data))
+        //´primeiramente vai ser uma requisição tipo get, com os params como req e a funçao exibirResultado como res. 
+
+        axios.post('formulario',{
+            nome:'Joao',
+            sobrenome:'Silva'
+        }).then(resp => exibirResultado('post', resp.data))
     </script>
 </body>
