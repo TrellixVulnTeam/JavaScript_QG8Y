@@ -1,8 +1,14 @@
 {
   "devDependencies": {
-    "'": "file:babel/cli,@babel/core,@babel/preset-env,babel-preset-env,gulp,gulp-babel,gulp-concat,gulp-sass,gulp-typescript,gulp-uglify,gulp-uglifycss,typescript'"
+    "'": "file:babel/cli,@babel/core,@babel/preset-env,babel-preset-env,gulp,gulp-babel,gulp-concat,gulp-sass,gulp-typescript,gulp-uglify,gulp-uglifycss,typescript'",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^7.0.1"
   },
   "dependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2"
   }
 }
