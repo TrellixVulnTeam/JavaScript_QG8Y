@@ -1,8 +1,13 @@
-body{
-    background-color: blueviolet;
-}
-h1{
-    color: white;
-    background-image: linear-gradient(to right, rgb(62, 6, 114), rgb(108, 24, 185), transparent );
-    padding: 10px;
-}
+body {
+  background-color: blueviolet; }
+
+h1 {
+  color: white;
+  background-image: linear-gradient(to right, #3e0672, #6c18b9, transparent);
+  padding: 10px; }
+
+.botao {
+  background-color: #320c55;
+  color: #fff;
+  font-size: 1.8em; }
+
