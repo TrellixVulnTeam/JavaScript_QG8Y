@@ -17,6 +17,40 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+        //append, appendTo e prepend, prependTO:
+
+        $('#div1').append(', 2')
+        $('#div1').prepend('0, ')
+
+        $('<span>, 3</span>').appendTo('#div1')
+        $('<span>-1, </span>').prependTo('#div1')
+
+        //before, insertBefore e after, insertAfter:
+
+        $('#div2').before('<p>Antes 2</p>')//antes da div2
+        $('#div2').after('<p>Depois 2</p>')//depois da div2
+        
+        $('<p>Antes 3</p>').insertBefore('#div3')//entre a div2 e o before
+        $('<p>Depois 3</p>').insertAfter('#div3')//entre a div2 e o after
+
+        //wrap e wrapAll:
+
+        //$('p.numero').wrap('<div>') vai pegar os elementos p com a class numero e colocar uma div para cada um deles
+        $('p.numero').wrapAll('<div id="div4">')//vai pegar os elementos p com a class numero e colocar todos eles dentro de uma unica div
+        
+        //empty, prev:
+
+        $('#div4').empty()//vai limpar o que tem dentro da div4 sem apagar ela
+        $('#div3, #div4').prev().remove()//vai selecionar a div3 e div4, pegar apenas o que vem antes das duas e remover
+
+        //replaceAll e replaceWith
+
+        //$('<div>Substituto</div>').replaceAll('body > p')//qualquer paragrafo dentro de bory sera substituido por essa div criada
+
+        $('body > p').replaceWith('<div>Substituto</div>')//O resultado vai ser o mesmo da anterior. o que muda é so a ordem de escrever aqui
+        $('body > p').replaceWith(function(){
+            return $('div').html($(this).html())
+        })
+
     </script>
 </body>
