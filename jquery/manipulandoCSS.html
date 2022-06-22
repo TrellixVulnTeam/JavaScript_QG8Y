@@ -15,6 +15,24 @@
     <div id='div3'>3</div>
     <div id='resultado'></div>
     <script>
-        // ...
+        const fonte = $('#div1').css('font-family')
+        const color = $('#div1').css('background-color')
+        $('#resultado').append(`A fonte é ${fonte} <br>A cor é ${color}`)
+
+        $('#div1').css('font-size', '3em')
+        $('#div1').css({'font-size': '3.5em', 'color': 'rgb(184, 134, 11)', 'background-color': 'black'})
+        $('#div1').css('font-size', function(){
+            return `${2 * 2}em`
+        })
+
+        $('#div2').addClass('destaque')
+        const temClasse = $('#div2').hasClass('destaque')
+        $('#resultado').append(`<br>A div 2 tem a class destaque? ${temClasse}`)
+
+        const larguraTela = $('HTML').css('width')
+        $('#resultado').append(`<br>A largura da tela é ${larguraTela}`)
+
+        const AlturaTela = $('HTML').css('height')
+        $('#resultado').append(`<br>A altura da tela é ${AlturaTela}`)
     </script>
 </body>
