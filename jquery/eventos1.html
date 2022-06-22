@@ -20,6 +20,45 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        //Mostrar posicao do mouse:
+        function mostrarPosicaoMouse(e){
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`)
+        }
+        $('body').on('mousemove', mostrarPosicaoMouse) //aqui vai ativar a funcao para dizer a posição do mouse
+
+        $('#posicao').mouseover(e =>{
+            $('body').off('mousemove', mostrarPosicaoMouse) //quando o mouse passar por cima da div com o id posicao, a funcao de mostrar posicao sera desativada 
+        })
+        $('#posicao').mouseleave(e =>{
+            $('body').on('mousemove', mostrarPosicaoMouse)// quando o mouse sair de cima da div, a fucao sera ativada novamente
+        })
+
+        //Mostrar quantos cliques foram dados:
+        let cliques = 0
+        $('body').click(e =>{
+            $('#cliques').html(`Cliques: ${++cliques}`)
+
+        })
+
+        //Mudar o background do body:
+        const backgroundOriginal = $('body').css('background-color')
+        //keyup(): o evento ocorre quando a tecla retorna à posição original no teclado (i.e. quando você solta a mesma).
+
+        //keydown(): o evento ocorre quando a tecla é pressionada. O evento repete enquanto a tecla estiver pressionada (exceto para as teclas Ctrl, Alt e Shift).
+        
+        //keypress(): o evento ocorre quando a tecla está pressionada. O evento repete enquanto a tecla estiver pressionada (exceto para as teclas Ctrl, Alt e Shift)
+
+        //A diferença entre keydown() e keypress() está que o segundo não é capturado quando as teclas Ctrl, Alt ou Shift são pressionadas.
+        $('input').keyup(function (e){
+            const valor = $(this).val()
+            console.log(valor)
+            if(valor.match(/#[\da-fA-F]{3,6}/)){
+                //se o valor digitado começar com # e for um (d)digito de (a-f)a até f ou (A-F) A até F e tiver a quantidade de digitos entre 3 E 6, ele é um valor valido.
+
+                $('body').css('background-color', valor)
+            }else{
+                $('body').css('background-color', backgroundOriginal)
+            }
+        })
     </script>
 </body>
