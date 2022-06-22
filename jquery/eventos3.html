@@ -21,11 +21,36 @@
 <body class='conteudo exercicio'>
     <h1>Eventos #03</h1>
     <div id='div1'>1</div>
-    <div id='div2'>1</div>
+    <div id='div2'>2</div>
     <input id='input1' type='text' placeholder='Digite Algo!'>
     <span id='resultado'></span>
 
     <script>
-        // ...
+        function exibirDadosEvento(e){
+            $('#resultado').empty()//limpar o resultado assim que o evento for acionado
+            const div1 = $('<div>')
+            const div2 = $('<div>')
+            $('#resultado').append(div1, div2)
+            div1.append(`target: ${e.target.id}`)// vai dizer o id do item em que esta acontecendo o evento
+
+            const rt = e.relatedTarget ? e.relatedTarget.tagName : null
+            div1.append(`<br>relatedTarget: ${rt}`)// se trata de um outro evento que esta relacionado ao evento anterior, esse informa pra onde vai o mouse uando sai de cima das divs, ele vai pro body
+
+            div1.append(`<br>which: ${e.which}`)//mostra se é mouseenter ou mouseleave
+
+            div1.append(`<br>type: ${e.type}`)//mostra qual tecla foi clicada
+            
+            div1.append(`<br>metaKey: ${e.metaKey}`)//mostra se a tecla windows ta selecionada
+
+            div2.append(`pageX: ${e.pageX}px<br>`)
+            div2.append(`pageY: ${e.pageY}px<br>`)
+            div2.append(`clientX: ${e.clientX}px<br>`)
+            div2.append(`clientY: ${e.clientY}px<br>`)
+
+            const obs = e.data ? e.data.obs : null
+            div2.append(`OBS: ${obs}`)
+        }
+        $('#div1, #div2').on('mouseenter mouseleave',{obs: 'Funciona!'}, exibirDadosEvento)
+        $('input').keyup(exibirDadosEvento)
     </script>
 </body>

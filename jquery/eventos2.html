@@ -21,6 +21,26 @@
     <input type="text" placeholder="Digite e Selecione">
     <div id="resultado2">?</div>
     <script>
-        // ...
+        const alternarDestaque = () => $('#div1').toggleClass('destaque')
+        //$('#div1').on('mouseenter mouseleave', alternarDestaque)// toda vez que o mouse ficar sobre a div, o evento é acionado
+        $('#div1').hover(alternarDestaque)// toda vez que o mouse ficar sobre a div, o evento é acionado
+
+        $('#div1').one('mouseenter', e => alert('O mouse esta sobre a div!')) //o evento so acontecerá uma vez gracas ao one
+
+        $('#div1').dblclick(e =>$('#div1').fadeOut(1000).fadeIn(1000))//graças ao dblclick, se eu clicar sobre a div duas vezes ele vai sumir em 1 segundo com o fadeOut e voltar em 1 segundo com o fadeIn
+
+        $(window).resize(function(e){
+            const L = $(window).width()
+            const A = $(window).height()
+            $('#resultado1').html(`Largura: ${L}px <br>Altura: ${A}px`)
+            //sempre que eu mexer no tamanho da tela, o tamanho atual sera impresso na div
+        })
+
+        $(':input').select(e =>{
+            const inicio = e.target.selectionStart
+            const fim= e.target.selectionEnd
+            $('#resultado2').html(e.target.value.substring(inicio, fim))
+            //No momento em que vou selecionando, a funcao vai colocando as partes selecionadas na div
+        })
     </script>
 </body>
