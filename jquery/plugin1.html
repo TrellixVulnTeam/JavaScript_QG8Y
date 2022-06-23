@@ -22,6 +22,29 @@
     </div>
 
     <script>
-        // ...
+        //const $ = {nome: 'não é o jQuery'}
+
+        (function ($){
+            $.fn.interpretar = function(){
+                const retirarChaves = s => s.substring(2, s.length - 2)//aqui vai pegar aquilo que esta entre as duas chaves
+
+                const conteudo = $(this).html()//aqui vai pegar o conteudo do html
+
+                const expressoesComChaves = conteudo.match(/\{\{.+\}\}/g)//aqui vai pegar as expressoes ainda com as chaves e vai pegar qualquer conteudo que não seja chave
+
+                const expressoes = expressoesComChaves.map(retirarChaves)// vai pegar a função anterior e colocala em um vetor
+                
+                const resultado = expressoes.map(e => eval(e))//a funcao eval vai pegar o elemento e resolver sua expressao e entregar o resultado
+
+                let conteudoFinal = conteudo
+                for(let i=0; i<expressoesComChaves.length; i++){
+                    conteudoFinal = conteudoFinal.replace(
+                        expressoesComChaves[i], resultado[i]
+                    )
+                }
+                $(this).html(conteudoFinal)
+            }
+        })(jQuery)
+        $('div').interpretar()
     </script>
 </body>

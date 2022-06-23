@@ -41,28 +41,11 @@
                 },duration: duracao
             }, 'linear', callback)
         }
-        function irParaDireita(valor, duracao, callback){
-            $('div').animate({left: `+=${valor}`}, duracao, callback)
-        }
-        function irParaBaixo(valor, duracao, callback){
-            $('div').animate({top: `+=${valor}`}, duracao, callback)
-        }
-        function irParaEsquerda(valor, duracao, callback){
-            $('div').animate({rigth: `+=${valor}`}, duracao, callback)
-        }
-        function irParaTopo(valor, duracao, callback){
-            $('div').animate({bottom: `+=${valor}`}, duracao, callback)
-        }
+       
         alterarLargura(300, 1000, () =>{
             alterarLargura(-300, 'slow', ()=>{
-                irParaDireita(100, 1000, () =>{
-                    irParaBaixo(100, 1000, () =>{
-                        irParaEsquerda(1100, 1000, () =>{
-                            irParaTopo(9100, 1000, () =>{
-                                girar(4000, 5000)
-                            })
-                        })
-                    })
+                moverDiagonal(300, 600, () =>{
+                    girar(4000, 3000)
                 })
             })
         })
