@@ -26,7 +26,7 @@
 
         (function ($){
             $.fn.interpretar = function(){
-                const retirarChaves = s => s.substring(2, s.length - 2)//aqui vai pegar aquilo que esta entre as duas chaves
+                const retirarChaves = s => s.substring(2, s.length - 2)//aqui vai retirar os pares de chaves
 
                 const conteudo = $(this).html()//aqui vai pegar o conteudo do html
 
@@ -43,6 +43,7 @@
                     )
                 }
                 $(this).html(conteudoFinal)
+                return this
             }
         })(jQuery)
         $('div').interpretar()
