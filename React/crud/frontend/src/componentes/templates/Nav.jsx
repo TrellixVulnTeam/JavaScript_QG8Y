@@ -2,5 +2,10 @@ import './Nav.css'
 import React from 'react'
 export default props =>
     <aside className="menu-area">
-        Navegação
+        <a href="#/">
+            <i className="fa fa-home"></i>Inicio
+        </a>
+        <a href="#/users">
+            <i className="fa fa-users"></i>Usuários
+        </a>
     </aside>
