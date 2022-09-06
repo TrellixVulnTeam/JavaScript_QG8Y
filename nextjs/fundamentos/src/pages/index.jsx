@@ -6,6 +6,8 @@ export default function inicio(){
         <Navegador texto="Estiloso" destino="/estiloso"/>
         <Navegador texto="Exemplo" destino="/exemplo" cor="#9400d3"/>
         <Navegador texto="JSX" destino="/jsx" cor="crimson"/>
+        <Navegador texto="Navegação #01" destino="/navegacao/" cor="green"/>
+        <Navegador texto="Navegação #02" destino="/cliente/123/rn-324" cor="blue"/>
     </div>
     )
 }
