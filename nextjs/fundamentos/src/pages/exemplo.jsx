@@ -1,12 +1,12 @@
 import Cabecalho from "../components/Cabecalho";
+import Layout from "../components/Layout";
 import Link from 'next/link'
 export default function Exemplo(){
     return(
-        <>
-            <Cabecalho nome="xyz" idade={13} ehLegal={true} />
+
+        <Layout titulo="Usando Componente">
             <Cabecalho titulo="Next.js & React" />
-            <Cabecalho titulo="Aprende Next na pratica" />
-            <Link href="/">Voltar</Link>
-        </>
+            <Cabecalho titulo="Aprende Next na pratica"/>            
+        </Layout>
     )
 }
