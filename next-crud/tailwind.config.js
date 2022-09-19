@@ -6,6 +6,12 @@ module.exports = {
       /^bg-/,
       /^to-/,
       /^from-/,
+      'from-green-400',
+      'from-blue-400',
+      'from-red-400',
+      'to-red-700',
+      'to-blue-700',
+      'to-green-700',
     ]
   },
   darkMode: false, // or 'media' or 'class'
