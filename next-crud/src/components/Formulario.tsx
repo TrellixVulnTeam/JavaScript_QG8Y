@@ -41,7 +41,9 @@ export default function Formulario(props: FormularioProps){
                     onClick={() => props.clienteMudou?.(new Cliente(nome, idade, id))}>
                         {id? 'Alterar' : 'Salvar'}
                 </Botao>
-                <Botao cor="red" onClick={props.cancelado}>Cancelar</Botao>
+                <Botao cor="red" onClick={props.cancelado}>
+                    Cancelar
+                </Botao>
             </div>
         </div>
     )
