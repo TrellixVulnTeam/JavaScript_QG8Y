@@ -1,32 +1,12 @@
-import { useState } from "react";
 import Botao from "../components/Botao";
 import Formulario from "../components/Formulario";
 import Layout from "../components/Layout";
 import Tabela from "../components/Tabela";
-import Cliente from "../core/Cliente";
+import useClientes from "../hooks/useClientes";
 
 export default function Home() {  
-  const [cliente, setCliente] = useState<Cliente>(Cliente.vazio())
-  const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela')
-  const clientes = [
-    new Cliente('Ana', 23, '1'),
-    new Cliente('Bia', 23, '2'),
-    new Cliente('Carlos', 23, '3'),
-    new Cliente('Pedr', 23, '4'),
-  ] 
-  function clienteSelecionado(cliente: Cliente){
-    setCliente(cliente)
-    setVisivel('form')
-  }  
-  function clienteExluido(cliente: Cliente){
-  }
-  function salvarCLiente(cliente: Cliente){
-    setVisivel('tabela')
-  }
-  function novoCLiente(){
-    setCliente(Cliente.vazio())
-    setVisivel('form')
-  }
+  const {novoCLiente, salvarCLiente, excluirCliente,selecionarCliente, tabelaVisivel,
+    exibirTabela, cliente, clientes} = useClientes()
   
   return (
     <div className={`
@@ -34,7 +14,7 @@ export default function Home() {
       text-white
     `}>
       <Layout titulo="Cadastro Simples">
-        {visivel === 'tabela' ? (
+        {tabelaVisivel ? (
           <>
             <div className="flex justify-end">
               <Botao 
@@ -45,15 +25,15 @@ export default function Home() {
               </Botao>
             </div>
             <Tabela clientes={clientes}
-              clienteSelecionado={clienteSelecionado}
-              clienteExcluido={clienteExluido}
+              clienteSelecionado={selecionarCliente}
+              clienteExcluido={excluirCliente}
             />
           </>
         ):(
           <Formulario 
             cliente={cliente}
             clienteMudou={salvarCLiente}
-            cancelado={() => setVisivel('tabela')}
+            cancelado={exibirTabela}
           />
         )}
       </Layout>
