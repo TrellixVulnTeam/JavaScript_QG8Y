@@ -1,21 +1,22 @@
 <template>
     <div class="display">
-        {{value}}
+        {{ value }}
     </div>
 </template>
 
 <script>
 export default {
-    props:['value']
+    props: ['value']
 }
 </script>
 
 <style>
-    .display{
+    .display {
         grid-column: span 4;
         background-color: #0004;
+
         display: flex;
-        justify-items: flex-end;
+        justify-content: flex-end;
         align-items: center;
         padding: 20px;
         font-size: 2.1em;
